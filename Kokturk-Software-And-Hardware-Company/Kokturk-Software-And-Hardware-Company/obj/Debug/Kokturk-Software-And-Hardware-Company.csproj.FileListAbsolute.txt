@@ -1,0 +1,15 @@
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\bin\Debug\Kokturk-Software-And-Hardware-Company.exe.config
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\bin\Debug\Kokturk-Software-And-Hardware-Company.exe
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\bin\Debug\Kokturk-Software-And-Hardware-Company.pdb
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\obj\Debug\Kokturk-Software-And-Hardware-Company.csproj.AssemblyReference.cache
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\obj\Debug\Kokturk_Software_And_Hardware_Company.Form1.resources
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\obj\Debug\Kokturk_Software_And_Hardware_Company.Properties.Resources.resources
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\obj\Debug\Kokturk-Software-And-Hardware-Company.csproj.GenerateResource.cache
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\obj\Debug\Kokturk-Software-And-Hardware-Company.csproj.CoreCompileInputs.cache
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\obj\Debug\Kokturk-Software-And-Hardware-Company.exe
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\obj\Debug\Kokturk-Software-And-Hardware-Company.pdb
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\bin\Debug\EntityFramework.dll
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\bin\Debug\EntityFramework.SqlServer.dll
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\bin\Debug\EntityFramework.xml
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\bin\Debug\EntityFramework.SqlServer.xml
+C:\Full-Stack-Web-Developer-ISMEK\Certificate-Project\Kokturk-Software-And-Hardware-Company\Kokturk-Software-And-Hardware-Company\obj\Debug\Kokturk-.6D93F2D4.Up2Date

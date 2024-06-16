@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Full-Stack-Web-Developer-ISMEK\\Certificate-Project\\Kokturk-Software-And-Hardware-Company\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB7775-11DC-4768-891B-7AED3AB26EAB}|Kokturk-Software-And-Hardware-Company\\Kokturk-Software-And-Hardware-Company.csproj|c:\\full-stack-web-developer-ismek\\certificate-project\\kokturk-software-and-hardware-company\\kokturk-software-and-hardware-company\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FBCB7775-11DC-4768-891B-7AED3AB26EAB}|Kokturk-Software-And-Hardware-Company\\Kokturk-Software-And-Hardware-Company.csproj|solutionrelative:kokturk-software-and-hardware-company\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCB7775-11DC-4768-891B-7AED3AB26EAB}|Kokturk-Software-And-Hardware-Company\\Kokturk-Software-And-Hardware-Company.csproj|C:\\Full-Stack-Web-Developer-ISMEK\\Certificate-Project\\Kokturk-Software-And-Hardware-Company\\kokturk-software-and-hardware-company\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCB7775-11DC-4768-891B-7AED3AB26EAB}|Kokturk-Software-And-Hardware-Company\\Kokturk-Software-And-Hardware-Company.csproj|solutionrelative:kokturk-software-and-hardware-company\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Full-Stack-Web-Developer-ISMEK\\Certificate-Project\\Kokturk-Software-And-Hardware-Company\\Kokturk-Software-And-Hardware-Company\\Form1.cs",
+              "RelativeDocumentMoniker": "Kokturk-Software-And-Hardware-Company\\Form1.cs",
+              "ToolTip": "C:\\Full-Stack-Web-Developer-ISMEK\\Certificate-Project\\Kokturk-Software-And-Hardware-Company\\Kokturk-Software-And-Hardware-Company\\Form1.cs [Design]",
+              "RelativeToolTip": "Kokturk-Software-And-Hardware-Company\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T09:34:18.348Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Full-Stack-Web-Developer-ISMEK\\Certificate-Project\\Kokturk-Software-And-Hardware-Company\\Kokturk-Software-And-Hardware-Company\\Form1.cs",
+              "RelativeDocumentMoniker": "Kokturk-Software-And-Hardware-Company\\Form1.cs",
+              "ToolTip": "C:\\Full-Stack-Web-Developer-ISMEK\\Certificate-Project\\Kokturk-Software-And-Hardware-Company\\Kokturk-Software-And-Hardware-Company\\Form1.cs",
+              "RelativeToolTip": "Kokturk-Software-And-Hardware-Company\\Form1.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAwwD8AAACBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T10:50:39.563Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

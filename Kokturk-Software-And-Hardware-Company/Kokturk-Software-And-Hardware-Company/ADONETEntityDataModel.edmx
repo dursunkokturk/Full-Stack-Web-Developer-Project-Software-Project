@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Kokturk_SoftwareModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Computer_Programming_Languages_Frameworks">
+          <Key>
+            <PropertyRef Name="Computer_Programming_Language_Framework_Id" />
+          </Key>
+          <Property Name="Computer_Programming_Language_Framework_Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Computer_Programming_Language_Framework_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Computer_Programming_Language_Framework_Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Devices">
+          <Key>
+            <PropertyRef Name="Device_Id" />
+          </Key>
+          <Property Name="Device_Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Device_Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Mobile_Programming_Languages_Frameworks">
+          <Key>
+            <PropertyRef Name="Framework_Id" />
+          </Key>
+          <Property Name="Framework_Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Mobile_Framework" Type="smallint" />
+          <Property Name="Framework_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Framework_Description" Type="text" />
+        </EntityType>
+        <EntityType Name="Programming_Languages">
+          <Key>
+            <PropertyRef Name="Programming_Language_Id" />
+          </Key>
+          <Property Name="Programming_Language_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Device_Select" Type="smallint" />
+          <Property Name="Programming_Languages" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile_Programming_Languages_Frameworks" Type="smallint" />
+          <Property Name="Computer_Programming_Languages_Frameworks" Type="smallint" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Programming_Languages_Computer_Programming_Languages">
+          <End Role="Computer_Programming_Languages_Frameworks" Type="Self.Computer_Programming_Languages_Frameworks" Multiplicity="0..1" />
+          <End Role="Programming_Languages" Type="Self.Programming_Languages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Computer_Programming_Languages_Frameworks">
+              <PropertyRef Name="Computer_Programming_Language_Framework_Id" />
+            </Principal>
+            <Dependent Role="Programming_Languages">
+              <PropertyRef Name="Computer_Programming_Languages_Frameworks" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Programming_Languages_Devices">
+          <End Role="Devices" Type="Self.Devices" Multiplicity="0..1" />
+          <End Role="Programming_Languages" Type="Self.Programming_Languages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Devices">
+              <PropertyRef Name="Device_Id" />
+            </Principal>
+            <Dependent Role="Programming_Languages">
+              <PropertyRef Name="Device_Select" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Programming_Languages_Frameworks">
+          <End Role="Mobile_Programming_Languages_Frameworks" Type="Self.Mobile_Programming_Languages_Frameworks" Multiplicity="0..1" />
+          <End Role="Programming_Languages" Type="Self.Programming_Languages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mobile_Programming_Languages_Frameworks">
+              <PropertyRef Name="Framework_Id" />
+            </Principal>
+            <Dependent Role="Programming_Languages">
+              <PropertyRef Name="Mobile_Programming_Languages_Frameworks" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Kokturk_SoftwareModelStoreContainer">
+          <EntitySet Name="Computer_Programming_Languages_Frameworks" EntityType="Self.Computer_Programming_Languages_Frameworks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Devices" EntityType="Self.Devices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mobile_Programming_Languages_Frameworks" EntityType="Self.Mobile_Programming_Languages_Frameworks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Programming_Languages" EntityType="Self.Programming_Languages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Programming_Languages_Computer_Programming_Languages" Association="Self.FK_Programming_Languages_Computer_Programming_Languages">
+            <End Role="Computer_Programming_Languages_Frameworks" EntitySet="Computer_Programming_Languages_Frameworks" />
+            <End Role="Programming_Languages" EntitySet="Programming_Languages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Programming_Languages_Devices" Association="Self.FK_Programming_Languages_Devices">
+            <End Role="Devices" EntitySet="Devices" />
+            <End Role="Programming_Languages" EntitySet="Programming_Languages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Programming_Languages_Frameworks" Association="Self.FK_Programming_Languages_Frameworks">
+            <End Role="Mobile_Programming_Languages_Frameworks" EntitySet="Mobile_Programming_Languages_Frameworks" />
+            <End Role="Programming_Languages" EntitySet="Programming_Languages" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Kokturk_SoftwareModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Computer_Programming_Languages_Frameworks">
+          <Key>
+            <PropertyRef Name="Computer_Programming_Language_Framework_Id" />
+          </Key>
+          <Property Name="Computer_Programming_Language_Framework_Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Computer_Programming_Language_Framework_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Computer_Programming_Language_Framework_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Programming_Languages" Relationship="Self.FK_Programming_Languages_Computer_Programming_Languages" FromRole="Computer_Programming_Languages_Frameworks" ToRole="Programming_Languages" />
+        </EntityType>
+        <EntityType Name="Devices">
+          <Key>
+            <PropertyRef Name="Device_Id" />
+          </Key>
+          <Property Name="Device_Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Device_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Programming_Languages" Relationship="Self.FK_Programming_Languages_Devices" FromRole="Devices" ToRole="Programming_Languages" />
+        </EntityType>
+        <EntityType Name="Mobile_Programming_Languages_Frameworks">
+          <Key>
+            <PropertyRef Name="Framework_Id" />
+          </Key>
+          <Property Name="Framework_Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Mobile_Framework" Type="Int16" />
+          <Property Name="Framework_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Framework_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Programming_Languages" Relationship="Self.FK_Programming_Languages_Frameworks" FromRole="Mobile_Programming_Languages_Frameworks" ToRole="Programming_Languages" />
+        </EntityType>
+        <EntityType Name="Programming_Languages">
+          <Key>
+            <PropertyRef Name="Programming_Language_Id" />
+          </Key>
+          <Property Name="Programming_Language_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Device_Select" Type="Int16" />
+          <Property Name="Programming_Languages1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile_Programming_Languages_Frameworks" Type="Int16" />
+          <Property Name="Computer_Programming_Languages_Frameworks" Type="Int16" />
+          <NavigationProperty Name="Computer_Programming_Languages_Frameworks1" Relationship="Self.FK_Programming_Languages_Computer_Programming_Languages" FromRole="Programming_Languages" ToRole="Computer_Programming_Languages_Frameworks" />
+          <NavigationProperty Name="Devices" Relationship="Self.FK_Programming_Languages_Devices" FromRole="Programming_Languages" ToRole="Devices" />
+          <NavigationProperty Name="Mobile_Programming_Languages_Frameworks1" Relationship="Self.FK_Programming_Languages_Frameworks" FromRole="Programming_Languages" ToRole="Mobile_Programming_Languages_Frameworks" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Programming_Languages_Computer_Programming_Languages">
+          <End Role="Computer_Programming_Languages_Frameworks" Type="Self.Computer_Programming_Languages_Frameworks" Multiplicity="0..1" />
+          <End Role="Programming_Languages" Type="Self.Programming_Languages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Computer_Programming_Languages_Frameworks">
+              <PropertyRef Name="Computer_Programming_Language_Framework_Id" />
+            </Principal>
+            <Dependent Role="Programming_Languages">
+              <PropertyRef Name="Computer_Programming_Languages_Frameworks" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Programming_Languages_Devices">
+          <End Role="Devices" Type="Self.Devices" Multiplicity="0..1" />
+          <End Role="Programming_Languages" Type="Self.Programming_Languages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Devices">
+              <PropertyRef Name="Device_Id" />
+            </Principal>
+            <Dependent Role="Programming_Languages">
+              <PropertyRef Name="Device_Select" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Programming_Languages_Frameworks">
+          <End Role="Mobile_Programming_Languages_Frameworks" Type="Self.Mobile_Programming_Languages_Frameworks" Multiplicity="0..1" />
+          <End Role="Programming_Languages" Type="Self.Programming_Languages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mobile_Programming_Languages_Frameworks">
+              <PropertyRef Name="Framework_Id" />
+            </Principal>
+            <Dependent Role="Programming_Languages">
+              <PropertyRef Name="Mobile_Programming_Languages_Frameworks" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Kokturk_SoftwareEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Computer_Programming_Languages_Frameworks" EntityType="Self.Computer_Programming_Languages_Frameworks" />
+          <EntitySet Name="Devices" EntityType="Self.Devices" />
+          <EntitySet Name="Mobile_Programming_Languages_Frameworks" EntityType="Self.Mobile_Programming_Languages_Frameworks" />
+          <EntitySet Name="Programming_Languages" EntityType="Self.Programming_Languages" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Programming_Languages_Computer_Programming_Languages" Association="Self.FK_Programming_Languages_Computer_Programming_Languages">
+            <End Role="Computer_Programming_Languages_Frameworks" EntitySet="Computer_Programming_Languages_Frameworks" />
+            <End Role="Programming_Languages" EntitySet="Programming_Languages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Programming_Languages_Devices" Association="Self.FK_Programming_Languages_Devices">
+            <End Role="Devices" EntitySet="Devices" />
+            <End Role="Programming_Languages" EntitySet="Programming_Languages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Programming_Languages_Frameworks" Association="Self.FK_Programming_Languages_Frameworks">
+            <End Role="Mobile_Programming_Languages_Frameworks" EntitySet="Mobile_Programming_Languages_Frameworks" />
+            <End Role="Programming_Languages" EntitySet="Programming_Languages" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Kokturk_SoftwareModelStoreContainer" CdmEntityContainer="Kokturk_SoftwareEntities">
+          <EntitySetMapping Name="Computer_Programming_Languages_Frameworks">
+            <EntityTypeMapping TypeName="Kokturk_SoftwareModel.Computer_Programming_Languages_Frameworks">
+              <MappingFragment StoreEntitySet="Computer_Programming_Languages_Frameworks">
+                <ScalarProperty Name="Computer_Programming_Language_Framework_Id" ColumnName="Computer_Programming_Language_Framework_Id" />
+                <ScalarProperty Name="Computer_Programming_Language_Framework_Name" ColumnName="Computer_Programming_Language_Framework_Name" />
+                <ScalarProperty Name="Computer_Programming_Language_Framework_Description" ColumnName="Computer_Programming_Language_Framework_Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Devices">
+            <EntityTypeMapping TypeName="Kokturk_SoftwareModel.Devices">
+              <MappingFragment StoreEntitySet="Devices">
+                <ScalarProperty Name="Device_Id" ColumnName="Device_Id" />
+                <ScalarProperty Name="Device_Name" ColumnName="Device_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mobile_Programming_Languages_Frameworks">
+            <EntityTypeMapping TypeName="Kokturk_SoftwareModel.Mobile_Programming_Languages_Frameworks">
+              <MappingFragment StoreEntitySet="Mobile_Programming_Languages_Frameworks">
+                <ScalarProperty Name="Framework_Id" ColumnName="Framework_Id" />
+                <ScalarProperty Name="Mobile_Framework" ColumnName="Mobile_Framework" />
+                <ScalarProperty Name="Framework_Name" ColumnName="Framework_Name" />
+                <ScalarProperty Name="Framework_Description" ColumnName="Framework_Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Programming_Languages">
+            <EntityTypeMapping TypeName="Kokturk_SoftwareModel.Programming_Languages">
+              <MappingFragment StoreEntitySet="Programming_Languages">
+                <ScalarProperty Name="Programming_Language_Id" ColumnName="Programming_Language_Id" />
+                <ScalarProperty Name="Device_Select" ColumnName="Device_Select" />
+                <ScalarProperty Name="Programming_Languages1" ColumnName="Programming_Languages" />
+                <ScalarProperty Name="Mobile_Programming_Languages_Frameworks" ColumnName="Mobile_Programming_Languages_Frameworks" />
+                <ScalarProperty Name="Computer_Programming_Languages_Frameworks" ColumnName="Computer_Programming_Languages_Frameworks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Kokturk_SoftwareModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
